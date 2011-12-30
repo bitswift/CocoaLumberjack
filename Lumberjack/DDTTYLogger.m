@@ -34,29 +34,29 @@ static DDTTYLogger *sharedInstance;
 **/
 + (void)initialize
 {
-	static BOOL initialized = NO;
-	if (!initialized)
-	{
-		initialized = YES;
-		
-		sharedInstance = [[DDTTYLogger alloc] init];
-	}
+    static BOOL initialized = NO;
+    if (!initialized)
+    {
+        initialized = YES;
+        
+        sharedInstance = [[DDTTYLogger alloc] init];
+    }
 }
 
 + (DDTTYLogger *)sharedInstance
 {
-	return sharedInstance;
+    return sharedInstance;
 }
 
 - (id)init
 {
-	if (sharedInstance != nil)
-	{
-		return nil;
-	}
-	
-	if ((self = [super init]))
-	{
+    if (sharedInstance != nil)
+    {
+        return nil;
+    }
+    
+    if ((self = [super init]))
+    {
         dateFormatter = [[NSDateFormatter alloc] init];
         [dateFormatter setFormatterBehavior:NSDateFormatterBehavior10_4];
         [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss:SSS"];
@@ -80,102 +80,79 @@ static DDTTYLogger *sharedInstance;
         
         pid = (char *)malloc(pidLen);
         strncpy(pid, pidCStr, pidLen); // Not null terminated
-	}
-	return self;
+    }
+    return self;
 }
 
 - (void)logMessage:(DDLogMessage *)logMessage
 {
-	NSString *logMsg = logMessage->logMsg;
-	BOOL isFormatted = NO;
-	
-	if (formatter)
-	{
-		logMsg = [formatter formatLogMessage:logMessage];
-		isFormatted = logMsg != logMessage->logMsg;
-	}
-	
-	if (logMsg)
-	{
-		const char *msg = [logMsg UTF8String];
-		size_t msgLen = strlen(msg);
-		
-		if (isFormatted)
-		{
-			struct iovec v[2];
-			
-			v[0].iov_base = (char *)msg;
-			v[0].iov_len = msgLen;
-			
-			v[1].iov_base = "\n";
-			v[1].iov_len = (msg[msgLen] == '\n') ? 0 : 1;
-			
-			writev(STDERR_FILENO, v, 2);
-		}
-		else
-		{
-			// The following is a highly optimized verion of file output to std err.
-			
-			// ts = timestamp
-			
-			NSString *tsNStr = [dateFormatter stringFromDate:(logMessage->timestamp)];
-			
-			const char *tsCStr = [tsNStr UTF8String];
-			size_t tsLen = strlen(tsCStr);
-			
-			// tid = thread id
-			// 
-			// How many characters do we need for the thread id?
-			// logMessage->machThreadID is of type mach_port_t, which is an unsigned int.
-			// 
-			// 1 hex char = 4 bits
-			// 8 hex chars for 32 bit, plus ending '\0' = 9
-			
-			char tidCStr[9];
-			int tidLen = snprintf(tidCStr, 9, "%x", logMessage->machThreadID);
-			
-			// Here is our format: "%s %s[%i:%s] %s", timestamp, appName, processID, threadID, logMsg
-			
-			struct iovec v[10];
-			
-			v[0].iov_base = (char *)tsCStr;
-			v[0].iov_len = tsLen;
-			
-			v[1].iov_base = " ";
-			v[1].iov_len = 1;
-			
-			v[2].iov_base = app;
-			v[2].iov_len = appLen;
-			
-			v[3].iov_base = "[";
-			v[3].iov_len = 1;
-			
-			v[4].iov_base = pid;
-			v[4].iov_len = pidLen;
-			
-			v[5].iov_base = ":";
-			v[5].iov_len = 1;
-			
-			v[6].iov_base = tidCStr;
-			v[6].iov_len = MIN((size_t)8, (size_t)tidLen); // snprintf doesn't return what you might think
-			
-			v[7].iov_base = "] ";
-			v[7].iov_len = 2;
-			
-			v[8].iov_base = (char *)msg;
-			v[8].iov_len = msgLen;
-			
-			v[9].iov_base = "\n";
-			v[9].iov_len = (msg[msgLen] == '\n') ? 0 : 1;
-			
-			writev(STDERR_FILENO, v, 10);
-		}
-	}
+    NSString *logMsg = logMessage->logMsg;
+    
+    if (formatter)
+    {
+        logMsg = [formatter formatLogMessage:logMessage];
+    }
+    
+    if (logMsg)
+    {
+        const char *msg = [logMsg UTF8String];
+        size_t msgLen = strlen(msg);
+        
+        // The following is a highly optimized verion of file output to std err.
+        
+        // ts = timestamp
+        
+        NSString *tsNStr = [dateFormatter stringFromDate:(logMessage->timestamp)];
+        
+        const char *tsCStr = [tsNStr UTF8String];
+        size_t tsLen = strlen(tsCStr);
+        
+        // tid = thread id
+        // 
+        // How many characters do we need for the thread id?
+        // logMessage->machThreadID is of type mach_port_t, which is an unsigned int.
+        // 
+        // 1 hex char = 4 bits
+        // 8 hex chars for 32 bit, plus ending '\0' = 9
+        
+        char tidCStr[9];
+        int tidLen = snprintf(tidCStr, 9, "%x", logMessage->machThreadID);
+        
+        // Here is our format: "%s %s[%s]: %s", timestamp, appName, threadID, logMsg
+        
+        struct iovec v[8];
+        
+        v[0].iov_base = (char *)tsCStr;
+        v[0].iov_len = tsLen;
+        
+        v[1].iov_base = " ";
+        v[1].iov_len = 1;
+        
+        v[2].iov_base = app;
+        v[2].iov_len = appLen;
+        
+        v[3].iov_base = "[";
+        v[3].iov_len = 1;
+        
+        v[4].iov_base = tidCStr;
+        v[4].iov_len = MIN((size_t)8, (size_t)tidLen); // snprintf doesn't return what you might think
+        
+        v[5].iov_base = "]: ";
+        v[5].iov_len = 3;
+        
+        v[6].iov_base = (char *)msg;
+        v[6].iov_len = msgLen;
+        
+        v[7].iov_base = "\n";
+        v[7].iov_len = (msg[msgLen] == '\n') ? 0 : 1;
+        
+        writev(STDERR_FILENO, v, sizeof(v) / sizeof(*v));
+    }
 }
 
 - (NSString *)loggerName
 {
-	return @"cocoa.lumberjack.ttyLogger";
+    return @"cocoa.lumberjack.ttyLogger";
 }
 
 @end
