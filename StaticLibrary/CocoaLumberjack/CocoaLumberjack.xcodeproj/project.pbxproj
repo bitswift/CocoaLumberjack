@@ -53,19 +53,6 @@
 		6A0A488B14A7D8C000DDC583 /* ContextFilterLogFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContextFilterLogFormatter.m; sourceTree = "<group>"; };
 		6A0A488C14A7D8C000DDC583 /* DispatchQueueLogFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DispatchQueueLogFormatter.h; sourceTree = "<group>"; };
 		6A0A488D14A7D8C000DDC583 /* DispatchQueueLogFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DispatchQueueLogFormatter.m; sourceTree = "<group>"; };
-		6A0A489E14A7F40F00DDC583 /* ARC-GC.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "ARC-GC.xcconfig"; sourceTree = "<group>"; };
-		6A0A489F14A7F40F00DDC583 /* Common.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Common.xcconfig; sourceTree = "<group>"; };
-		6A0A48A014A7F40F00DDC583 /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
-		6A0A48A114A7F40F00DDC583 /* Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
-		6A0A48A214A7F40F00DDC583 /* static.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = static.xcconfig; sourceTree = "<group>"; };
-		6A16285014A83BC400530FFA /* MacOSX.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = MacOSX.xcconfig; sourceTree = "<group>"; };
-		6A16285114A83BFB00530FFA /* static-mac.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "static-mac.xcconfig"; sourceTree = "<group>"; };
-		6A16285214A83C1D00530FFA /* static-mac-release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "static-mac-release.xcconfig"; sourceTree = "<group>"; };
-		6A16285314A83C2A00530FFA /* static-mac-debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "static-mac-debug.xcconfig"; sourceTree = "<group>"; };
-		6A16286414A87DD300530FFA /* IOS.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = IOS.xcconfig; sourceTree = "<group>"; };
-		6A16286514A87DD300530FFA /* static-ios-debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "static-ios-debug.xcconfig"; sourceTree = "<group>"; };
-		6A16286614A87DD300530FFA /* static-ios-release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "static-ios-release.xcconfig"; sourceTree = "<group>"; };
-		6A16286714A87DD300530FFA /* static-ios.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "static-ios.xcconfig"; sourceTree = "<group>"; };
 		6A16289C14A8899C00530FFA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		6A1628A714A88BA300530FFA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6A1628CA14A88E7000530FFA /* libCocoaLumberjackIOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCocoaLumberjackIOS.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -74,6 +61,21 @@
 		6A1628DD14A88EAB00530FFA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		6A1628DE14A88EAB00530FFA /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		6A1628DF14A88EAB00530FFA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D0A29B8214AD42A3000EC3EC /* Common.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Common.xcconfig; sourceTree = "<group>"; };
+		D0A29B8414AD42A3000EC3EC /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
+		D0A29B8514AD42A3000EC3EC /* Profile.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Profile.xcconfig; sourceTree = "<group>"; };
+		D0A29B8614AD42A3000EC3EC /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
+		D0A29B8814AD42A3000EC3EC /* Application.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Application.xcconfig; sourceTree = "<group>"; };
+		D0A29B8914AD42A3000EC3EC /* StaticLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = StaticLibrary.xcconfig; sourceTree = "<group>"; };
+		D0A29B8B14AD42A3000EC3EC /* iOS-Application.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "iOS-Application.xcconfig"; sourceTree = "<group>"; };
+		D0A29B8C14AD42A3000EC3EC /* iOS-Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "iOS-Base.xcconfig"; sourceTree = "<group>"; };
+		D0A29B8D14AD42A3000EC3EC /* iOS-StaticLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "iOS-StaticLibrary.xcconfig"; sourceTree = "<group>"; };
+		D0A29B8F14AD42A3000EC3EC /* Mac-Application.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-Application.xcconfig"; sourceTree = "<group>"; };
+		D0A29B9014AD42A3000EC3EC /* Mac-Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-Base.xcconfig"; sourceTree = "<group>"; };
+		D0A29B9114AD42A3000EC3EC /* Mac-DynamicLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-DynamicLibrary.xcconfig"; sourceTree = "<group>"; };
+		D0A29B9214AD42A3000EC3EC /* Mac-Framework.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-Framework.xcconfig"; sourceTree = "<group>"; };
+		D0A29B9314AD42A3000EC3EC /* Mac-StaticLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-StaticLibrary.xcconfig"; sourceTree = "<group>"; };
+		D0A29B9414AD42A3000EC3EC /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,8 +101,8 @@
 		6A0A485F14A7D89000DDC583 = {
 			isa = PBXGroup;
 			children = (
-				6A0A489D14A7F40F00DDC583 /* xcconfig */,
 				6A0A487E14A7D8C000DDC583 /* Lumberjack */,
+				D0A29B8014AD42A3000EC3EC /* Configuration */,
 				6A0A486C14A7D89000DDC583 /* Frameworks */,
 				6A0A486B14A7D89000DDC583 /* Products */,
 			);
@@ -157,27 +159,6 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		6A0A489D14A7F40F00DDC583 /* xcconfig */ = {
-			isa = PBXGroup;
-			children = (
-				6A0A489E14A7F40F00DDC583 /* ARC-GC.xcconfig */,
-				6A0A489F14A7F40F00DDC583 /* Common.xcconfig */,
-				6A0A48A014A7F40F00DDC583 /* Debug.xcconfig */,
-				6A16286414A87DD300530FFA /* IOS.xcconfig */,
-				6A16285014A83BC400530FFA /* MacOSX.xcconfig */,
-				6A0A48A114A7F40F00DDC583 /* Release.xcconfig */,
-				6A16286514A87DD300530FFA /* static-ios-debug.xcconfig */,
-				6A16286614A87DD300530FFA /* static-ios-release.xcconfig */,
-				6A16286714A87DD300530FFA /* static-ios.xcconfig */,
-				6A16285314A83C2A00530FFA /* static-mac-debug.xcconfig */,
-				6A16285214A83C1D00530FFA /* static-mac-release.xcconfig */,
-				6A16285114A83BFB00530FFA /* static-mac.xcconfig */,
-				6A0A48A214A7F40F00DDC583 /* static.xcconfig */,
-			);
-			name = xcconfig;
-			path = ../xcconfig;
-			sourceTree = "<group>";
-		};
 		6A16289E14A889A600530FFA /* mac */ = {
 			isa = PBXGroup;
 			children = (
@@ -202,6 +183,69 @@
 				6A1628DF14A88EAB00530FFA /* Foundation.framework */,
 			);
 			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		D0A29B8014AD42A3000EC3EC /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				D0A29B8114AD42A3000EC3EC /* Base */,
+				D0A29B8A14AD42A3000EC3EC /* iOS */,
+				D0A29B8E14AD42A3000EC3EC /* Mac OS X */,
+				D0A29B9414AD42A3000EC3EC /* README.md */,
+			);
+			name = Configuration;
+			path = ../xcconfig;
+			sourceTree = "<group>";
+		};
+		D0A29B8114AD42A3000EC3EC /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				D0A29B8214AD42A3000EC3EC /* Common.xcconfig */,
+				D0A29B8314AD42A3000EC3EC /* Configurations */,
+				D0A29B8714AD42A3000EC3EC /* Targets */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		D0A29B8314AD42A3000EC3EC /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				D0A29B8414AD42A3000EC3EC /* Debug.xcconfig */,
+				D0A29B8514AD42A3000EC3EC /* Profile.xcconfig */,
+				D0A29B8614AD42A3000EC3EC /* Release.xcconfig */,
+			);
+			path = Configurations;
+			sourceTree = "<group>";
+		};
+		D0A29B8714AD42A3000EC3EC /* Targets */ = {
+			isa = PBXGroup;
+			children = (
+				D0A29B8814AD42A3000EC3EC /* Application.xcconfig */,
+				D0A29B8914AD42A3000EC3EC /* StaticLibrary.xcconfig */,
+			);
+			path = Targets;
+			sourceTree = "<group>";
+		};
+		D0A29B8A14AD42A3000EC3EC /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				D0A29B8B14AD42A3000EC3EC /* iOS-Application.xcconfig */,
+				D0A29B8C14AD42A3000EC3EC /* iOS-Base.xcconfig */,
+				D0A29B8D14AD42A3000EC3EC /* iOS-StaticLibrary.xcconfig */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		D0A29B8E14AD42A3000EC3EC /* Mac OS X */ = {
+			isa = PBXGroup;
+			children = (
+				D0A29B8F14AD42A3000EC3EC /* Mac-Application.xcconfig */,
+				D0A29B9014AD42A3000EC3EC /* Mac-Base.xcconfig */,
+				D0A29B9114AD42A3000EC3EC /* Mac-DynamicLibrary.xcconfig */,
+				D0A29B9214AD42A3000EC3EC /* Mac-Framework.xcconfig */,
+				D0A29B9314AD42A3000EC3EC /* Mac-StaticLibrary.xcconfig */,
+			);
+			path = "Mac OS X";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -330,27 +374,21 @@
 /* Begin XCBuildConfiguration section */
 		6A0A487914A7D89000DDC583 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6A0A48A014A7F40F00DDC583 /* Debug.xcconfig */;
+			baseConfigurationReference = D0A29B8414AD42A3000EC3EC /* Debug.xcconfig */;
 			buildSettings = {
-				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		6A0A487A14A7D89000DDC583 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6A0A48A114A7F40F00DDC583 /* Release.xcconfig */;
+			baseConfigurationReference = D0A29B8614AD42A3000EC3EC /* Release.xcconfig */;
 			buildSettings = {
-				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
 		6A1628D314A88E7000530FFA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6A16286514A87DD300530FFA /* static-ios-debug.xcconfig */;
+			baseConfigurationReference = D0A29B8D14AD42A3000EC3EC /* iOS-StaticLibrary.xcconfig */;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -358,7 +396,7 @@
 		};
 		6A1628D414A88E7000530FFA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6A16286614A87DD300530FFA /* static-ios-release.xcconfig */;
+			baseConfigurationReference = D0A29B8D14AD42A3000EC3EC /* iOS-StaticLibrary.xcconfig */;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -366,16 +404,18 @@
 		};
 		6A1628E714A88EAB00530FFA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6A16285314A83C2A00530FFA /* static-mac-debug.xcconfig */;
+			baseConfigurationReference = D0A29B9314AD42A3000EC3EC /* Mac-StaticLibrary.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
 		6A1628E814A88EAB00530FFA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6A16285214A83C1D00530FFA /* static-mac-release.xcconfig */;
+			baseConfigurationReference = D0A29B9314AD42A3000EC3EC /* Mac-StaticLibrary.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
