@@ -420,6 +420,30 @@
 			};
 			name = Release;
 		};
+		D0A29B9C14AD43B8000EC3EC /* Profile */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0A29B8514AD42A3000EC3EC /* Profile.xcconfig */;
+			buildSettings = {
+			};
+			name = Profile;
+		};
+		D0A29B9D14AD43B8000EC3EC /* Profile */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0A29B8D14AD42A3000EC3EC /* iOS-StaticLibrary.xcconfig */;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Profile;
+		};
+		D0A29B9E14AD43B8000EC3EC /* Profile */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0A29B9314AD42A3000EC3EC /* Mac-StaticLibrary.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Profile;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -428,6 +452,7 @@
 			buildConfigurations = (
 				6A0A487914A7D89000DDC583 /* Debug */,
 				6A0A487A14A7D89000DDC583 /* Release */,
+				D0A29B9C14AD43B8000EC3EC /* Profile */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -437,6 +462,7 @@
 			buildConfigurations = (
 				6A1628D314A88E7000530FFA /* Debug */,
 				6A1628D414A88E7000530FFA /* Release */,
+				D0A29B9D14AD43B8000EC3EC /* Profile */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -446,6 +472,7 @@
 			buildConfigurations = (
 				6A1628E714A88EAB00530FFA /* Debug */,
 				6A1628E814A88EAB00530FFA /* Release */,
+				D0A29B9E14AD43B8000EC3EC /* Profile */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
