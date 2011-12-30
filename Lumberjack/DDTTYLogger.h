@@ -30,8 +30,6 @@ DDLOG_CLASS_EXPORT
 @interface DDTTYLogger : DDAbstractLogger <DDLogger>
 {
 @private
-
-	BOOL isaTTY;
 	
 	NSDateFormatter *dateFormatter;
 	

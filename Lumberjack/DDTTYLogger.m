@@ -57,42 +57,35 @@ static DDTTYLogger *sharedInstance;
 	
 	if ((self = [super init]))
 	{
-		isaTTY = (BOOL)isatty(STDERR_FILENO);
-		
-		if (isaTTY)
-		{
-			dateFormatter = [[NSDateFormatter alloc] init];
-			[dateFormatter setFormatterBehavior:NSDateFormatterBehavior10_4];
-			[dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss:SSS"];
-			
-			// Initialze 'app' variable (char *)
-			
-			NSString *appNStr = [[NSProcessInfo processInfo] processName];
-			const char *appCStr = [appNStr UTF8String];
-			
-			appLen = strlen(appCStr);
-			
-			app = (char *)malloc(appLen);
-			strncpy(app, appCStr, appLen); // Not null terminated
-			
-			// Initialize 'pid' variable (char *)
-			
-			NSString *pidNStr = [NSString stringWithFormat:@"%i", (int)getpid()];
-			const char *pidCStr = [pidNStr UTF8String];
-			
-			pidLen = strlen(pidCStr);
-			
-			pid = (char *)malloc(pidLen);
-			strncpy(pid, pidCStr, pidLen); // Not null terminated
-		}
+        dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setFormatterBehavior:NSDateFormatterBehavior10_4];
+        [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss:SSS"];
+        
+        // Initialze 'app' variable (char *)
+        
+        NSString *appNStr = [[NSProcessInfo processInfo] processName];
+        const char *appCStr = [appNStr UTF8String];
+        
+        appLen = strlen(appCStr);
+        
+        app = (char *)malloc(appLen);
+        strncpy(app, appCStr, appLen); // Not null terminated
+        
+        // Initialize 'pid' variable (char *)
+        
+        NSString *pidNStr = [NSString stringWithFormat:@"%i", (int)getpid()];
+        const char *pidCStr = [pidNStr UTF8String];
+        
+        pidLen = strlen(pidCStr);
+        
+        pid = (char *)malloc(pidLen);
+        strncpy(pid, pidCStr, pidLen); // Not null terminated
 	}
 	return self;
 }
 
 - (void)logMessage:(DDLogMessage *)logMessage
 {
-	if (!isaTTY) return;
-	
 	NSString *logMsg = logMessage->logMsg;
 	BOOL isFormatted = NO;
 	
